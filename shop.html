@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop - Product CRUD with stock</title>
+
+    <!-- update font-awesome cdn pro 6.4 -->
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-8c8d788ad0ee06dbc9619ff907c22651.css?vsn=d"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-light.css"
+    />
+
+    <!-- Linking Bootstrap CSS from CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <!-- Main Css code -->
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/product.css" />
+  </head>
+  <body>
+    <!-- Header Section start here -->
+    <section id="header">
+      <div class="container-size">
+        <div class="header-content">
+          <a href="./index.html"
+            ><img class="logo" src="./assets/images/logo.png" alt=""
+          /></a>
+          <div>
+            <ul id="navbar">
+              <li><a href="./index.html">Home</a></li>
+              <li><a class="active" href="./shop.html">Shop</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+              <li>
+                <a href="./dashboard/dashboard.html" class="mainDashboard"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a id="lg-bag" href="./cart.html"
+                  ><i class="fa-regular fa-cart-plus"></i
+                ></a>
+              </li>
+              <a href="#" id="close"
+                ><i class="fa-light fa-circle-xmark"></i
+              ></a>
+            </ul>
+          </div>
+          <div id="mobile-hum">
+            <a href="./cart.html"><i class="fa-regular fa-cart-plus"></i></a>
+            <i id="bar" class="fa-sharp fa-solid fa-outdent"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Product Page Banner Section -->
+    <div class="product_page_banner">
+      <div class="container-size">
+        <h1 class="text-center pb-4">ALL PRODUCTS</h1>
+        <!-- Product Category List -->
+        <div class="product_category_list">
+          <!-- Single Product Category Item -->
+          <a class="product_category_item" href="/category/test-category">
+            <b>0</b>
+            <img
+              src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-26-100x100.png"
+              alt=""
+            />
+            <h5>This is for pc</h5>
+          </a>
+          <!-- Repeated Product Category Items -->
+          <a class="product_category_item" href="/category/test-category">
+            <b>0</b>
+            <img
+              src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-26-100x100.png"
+              alt=""
+            />
+            <h5>This is for pc</h5>
+          </a>
+          <a class="product_category_item" href="/category/test-category">
+            <b>0</b>
+            <img
+              src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-26-100x100.png"
+              alt=""
+            />
+            <h5>This is for pc</h5>
+          </a>
+          <a class="product_category_item" href="/category/test-category">
+            <b>0</b>
+            <img
+              src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-26-100x100.png"
+              alt=""
+            />
+            <h5>This is for pc</h5>
+          </a>
+          <a class="product_category_item" href="/category/test-category">
+            <b>0</b>
+            <img
+              src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-26-100x100.png"
+              alt=""
+            />
+            <h5>This is for pc</h5>
+          </a>
+          <a class="product_category_item" href="/category/test-category">
+            <b>0</b>
+            <img
+              src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-26-100x100.png"
+              alt=""
+            />
+            <h5>This is for pc</h5>
+          </a>
+          <a class="product_category_item" href="/category/test-category">
+            <b>0</b>
+            <img
+              src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-26-100x100.png"
+              alt=""
+            />
+            <h5>This is for pc</h5>
+          </a>
+          <a class="product_category_item" href="/category/test-category">
+            <b>0</b>
+            <img
+              src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-26-100x100.png"
+              alt=""
+            />
+            <h5>This is for pc</h5>
+          </a>
+          <a class="product_category_item" href="/category/test-category">
+            <b>0</b>
+            <img
+              src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-26-100x100.png"
+              alt=""
+            />
+            <h5>This is for pc</h5>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Product Area -->
+    <div class="main_product_area">
+      <div class="container-size">
+        <div class="row">
+          <!-- Product Filter Sidebar -->
+          <div class="col-md-3">
+            <aside class="product_filter_side">
+              <form action="">
+                <div class="search_filtering widget_padding px-3">
+                  <div
+                    class="search_filter_bar"
+                    style="background-color: rgb(255, 255, 255)"
+                  >
+                    <input placeholder="Product search" type="search" /><button>
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 512 512"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="range_filtering widget_padding px-3">
+                  <h3>Search Price</h3>
+                  <div class="range_filtaring_fields">
+                    <input
+                      type="number"
+                      placeholder="min"
+                      step="5"
+                      value="5"
+                    /><input
+                      type="number"
+                      placeholder="max"
+                      step="50"
+                    /><button>Search</button>
+                  </div>
+                </div>
+                <div class="range_filtering widget_padding px-3">
+                  <h3>Search Stock</h3>
+                  <div class="Range">
+                    <input
+                      id="Range1"
+                      name="Range1"
+                      type="range"
+                      min="0"
+                      max="5000"
+                      step="1"
+                      value="0"
+                    />
+                    <span id="rangeValue">0</span>
+                  </div>
+                  <div class="box-minmax"><span>0</span><span>3000</span></div>
+                </div>
+                <div class="category_filtering widget_padding px-3">
+                  <h3>Product categories</h3>
+                  <ul>
+                    <li>
+                      <label><input type="checkbox" /> Man</label><b>0</b>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> Man</label><b>0</b>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> Man</label><b>0</b>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> Man</label><b>0</b>
+                    </li>
+                    <li>
+                      <label><input type="checkbox" /> Man</label><b>0</b>
+                    </li>
+                  </ul>
+                </div>
+                <div class="category_filtering widget_padding px-3">
+                  <h3>Product Brands</h3>
+                  <ul>
+                    <li>
+                      <label
+                        ><input type="radio" name="productBrand" /> Man</label
+                      ><b>0</b>
+                    </li>
+                    <li>
+                      <label
+                        ><input type="radio" name="productBrand" /> Man</label
+                      ><b>0</b>
+                    </li>
+                    <li>
+                      <label
+                        ><input type="radio" name="productBrand" /> Man</label
+                      ><b>0</b>
+                    </li>
+                    <li>
+                      <label
+                        ><input type="radio" name="productBrand" /> Man</label
+                      ><b>0</b>
+                    </li>
+                    <li>
+                      <label
+                        ><input type="radio" name="productBrand" /> Man</label
+                      ><b>0</b>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tags_filtering widget_padding px-3">
+                  <button type="reset">Reset</button>
+                </div>
+              </form>
+            </aside>
+          </div>
+          <!-- Main Product Section -->
+          <div class="col-md-9">
+            <div class="product_section_wraper">
+              <div class="product_item_wraper">
+                <div class="product_top_bar_info">
+                  <!-- Product Status Labels -->
+                  <div class="product_status">
+                    <button>Stock</button>
+                    <button>Out Of Stock</button>
+                    <button>Featured</button>
+                  </div>
+                  <!-- Product Image -->
+                  <div class="product_image">
+                    <a class="" href="/shop/test-product">
+                      <img
+                        src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-18-300x225.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <!-- Product Quick Actions -->
+                  <div class="single_product_future">
+                    <span
+                      data-bs-toggle="modal"
+                      data-bs-target="#showSingleProduct"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Quick View"
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 576 512"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"
+                        ></path>
+                      </svg>
+                    </span>
+                    <span
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Add to wishlist"
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 512 512"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                        ></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <!-- Product Information -->
+                <div class="product_info">
+                  <a class="" href="/shop/test-product">
+                    <h3 class="product_title">13-inch MacBook Air</h3>
+                  </a>
+                  <!-- Product Pricing -->
+                  <div class="product_pricing">
+                    <span class="sale_price">$999</span>
+                    <span class="regular_price">$999</span>
+                  </div>
+                  <p class="stock">IN STOCK:</p>
+                  <!-- Short Description -->
+                  <div class="short_desc">
+                    <p>
+                      ✓ 5 YEARS GUARANTEE ✓ FREE RETURNS ✓ INSTALLMENT OPTIONS
+                    </p>
+                  </div>
+                  <!-- Add to Cart Button -->
+                  <button class="add_to_card">Book Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter  Section start here -->
+    <section id="newsletter" class="section-p1">
+      <div class="container-size">
+        <div class="newsletter-content">
+          <div class="newsText">
+            <h4>Sign Up For Newsletters</h4>
+            <p>
+              Get E-mail updates about our latest shop and
+              <a href="#">special offers.</a>
+            </p>
+          </div>
+          <div class="newsForm">
+            <input type="text" placeholder="Your Email Address" />
+            <button class="normal" type="submit">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--? Show modal for single user data show  -->
+    <div
+      class="modal fade"
+      id="showSingleProduct"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="single_view_photo">
+                  <img
+                    src="https://teespace.harutheme.com/studio/wp-content/uploads/sites/3/2022/10/1-6.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="single_view_detels">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                  <h3>AOP Cut &amp; Sew Tee</h3>
+                  <div class="single_view_priging">
+                    <div class="single_sale_price"><h4>$26.00</h4></div>
+                    <div class="single_reguler_price"><h4>$26.00</h4></div>
+                  </div>
+                  <div class="product_sort_view_desc">
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Saepe asperiores omnis recusandae laudantium fugiat optio
+                      expedita ipsam neque odit, id, veritatis aliquam eos
+                      reprehenderit, illo quis placeat autem quas? Voluptas?
+                    </p>
+                  </div>
+                  <div class="single_product_cart_info">
+                    <div class="single_cart_btns">
+                      <button>
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 576 512"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M504.717 320H211.572l6.545 32h268.418c15.401 0 26.816 14.301 23.403 29.319l-5.517 24.276C523.112 414.668 536 433.828 536 456c0 31.202-25.519 56.444-56.824 55.994-29.823-.429-54.35-24.631-55.155-54.447-.44-16.287 6.085-31.049 16.803-41.548H231.176C241.553 426.165 248 440.326 248 456c0 31.813-26.528 57.431-58.67 55.938-28.54-1.325-51.751-24.385-53.251-52.917-1.158-22.034 10.436-41.455 28.051-51.586L93.883 64H24C10.745 64 0 53.255 0 40V24C0 10.745 10.745 0 24 0h102.529c11.401 0 21.228 8.021 23.513 19.19L159.208 64H551.99c15.401 0 26.816 14.301 23.403 29.319l-47.273 208C525.637 312.246 515.923 320 504.717 320zM408 168h-48v-40c0-8.837-7.163-16-16-16h-16c-8.837 0-16 7.163-16 16v40h-48c-8.837 0-16 7.163-16 16v16c0 8.837 7.163 16 16 16h48v40c0 8.837 7.163 16 16 16h16c8.837 0 16-7.163 16-16v-40h48c8.837 0 16-7.163 16-16v-16c0-8.837-7.163-16-16-16z"
+                          ></path></svg
+                        >Add to cart</button
+                      ><button class="wishlist_button">
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 512 512"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                          ></path>
+                        </svg>
+                        Add to wishlist
+                      </button>
+                    </div>
+                    <div class="product_additional_info">
+                      <div class="category">
+                        <b>Category:</b>
+                        <a href="/tag/new-tag">Alu,</a>
+                        <a href="/tag/new-tag">Alu,</a>
+                        <a href="/tag/new-tag">Alu,</a>
+                      </div>
+                      <div class="brand">
+                        <b>Brand:</b>
+                        <span>Tecno</span>
+                      </div>
+                      <div class="sku">
+                        <b>SKU:</b>
+                        <span>0091</span>
+                      </div>
+
+                      <div class="share">
+                        <b>Stock:</b>
+                        <span>0</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--? show modal for book Product -->
+    <!-- <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      data-bs-whatever="@getbootstrap"
+    >
+      Open modal for @getbootstrap
+    </button>
+
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label"
+                  >Recipient:</label
+                >
+                <input type="text" class="form-control" id="recipient-name" />
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label"
+                  >Message:</label
+                >
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="reset"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Send message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Footer Section start here -->
+    <footer>
+      <div class="container-size">
+        <div class="footer-content">
+          <div class="fColom">
+            <img class="footer-logo" src="./assets/images/logo.png" alt="" />
+            <h4>Contact</h4>
+            <p>
+              <strong>Address:</strong> Narayanganj Sadar Upazila 1421, Dhaka
+              Division
+            </p>
+            <p><strong>Phones:</strong> +01 0000 00 00 /(+881) 01903211039</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="socail-follow">
+              <h4>Follow Us</h4>
+              <div class="socail-icon">
+                <a href="#"><i class="fab fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fab fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fab fab fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="fColom">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+          </div>
+
+          <div class="fColom">
+            <h4>My Account</h4>
+            <a href="#">Sign in</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Trock My Order</a>
+            <a href="#">Help</a>
+          </div>
+
+          <div class="fColom footer-install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play.</p>
+            <div class="footer-install-images">
+              <img src="./assets/images/pay/app.jpg" alt="" />
+              <img src="./assets/images/pay/play.jpg" alt="" />
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="./assets/images/pay/pay.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="copyRight">
+        <p>©2023. Mamun Mirdha - HTML CSS Ecommerce Template</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <!-- Main javascript link -->
+    <script src="./assets/js/shop.js"></script>
+  </body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product CRUD with stock</title>
+
+    <!-- update font-awesome cdn pro 6.4 -->
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-8c8d788ad0ee06dbc9619ff907c22651.css?vsn=d"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-light.css"
+    />
+
+    <!-- Main Css code -->
+    <link rel="stylesheet" href="./assets/css/product.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+  </head>
+  <body>
+    <!-- Header Section start here -->
+    <section id="header">
+      <div class="container-size">
+        <div class="header-content">
+          <a href="./index.html"
+            ><img class="logo" src="./assets/images/logo.png" alt=""
+          /></a>
+          <div>
+            <ul id="navbar">
+              <li><a class="active" href="./index.html">Home</a></li>
+              <li><a href="./shop.html">Shop</a></li>
+              <li><a href="./blog.html">Blog</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+              <li>
+                <a href="./dashboard/dashboard.html" class="mainDashboard"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a id="lg-bag" href="./cart.html"
+                  ><i class="fa-regular fa-cart-plus"></i
+                ></a>
+              </li>
+              <a href="#" id="close"
+                ><i class="fa-light fa-circle-xmark"></i
+              ></a>
+            </ul>
+          </div>
+          <div id="mobile-hum">
+            <a href="./cart.html"><i class="fa-regular fa-cart-plus"></i></a>
+            <i id="bar" class="fa-sharp fa-solid fa-outdent"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Section start here -->
+    <section id="hero">
+      <div class="container-size">
+        <div class="hero-content">
+          <h4>Trade-in-offer</h4>
+          <h2>Super value deals</h2>
+          <h1>On all products</h1>
+          <p>Save more with coupons & up to 70% off!</p>
+          <a href="./shop.html">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Section start here -->
+    <section id="feature" class="section-p1">
+      <div class="container-size">
+        <div class="feature-content">
+          <div class="feature-box">
+            <img src="./assets/images/features/f1.png" alt="" />
+            <h6>Free Shipping</h6>
+          </div>
+          <div class="feature-box">
+            <img src="./assets/images/features/f2.png" alt="" />
+            <h6>Online Order</h6>
+          </div>
+          <div class="feature-box">
+            <img src="./assets/images/features/f3.png" alt="" />
+            <h6>Save Money</h6>
+          </div>
+          <div class="feature-box">
+            <img src="./assets/images/features/f4.png" alt="" />
+            <h6>Promotions</h6>
+          </div>
+          <div class="feature-box">
+            <img src="./assets/images/features/f5.png" alt="" />
+            <h6>Happy Sell</h6>
+          </div>
+          <div class="feature-box">
+            <img src="./assets/images/features/f6.png" alt="" />
+            <h6>F24/7 Support</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Product Section start here -->
+    <section id="Product-section" class="section-p1">
+      <div class="container-size">
+        <div class="Product-content">
+          <h2>Featured Products</h2>
+          <p>Summer Collection New Morden Design</p>
+          <div class="product_section_wraper">
+            <div class="product_item_wraper">
+              <div class="product_top_bar_info">
+                <!-- Product Status Labels -->
+                <div class="product_status">
+                  <button>New</button><button>27%</button>
+                </div>
+                <!-- Product Image -->
+                <div class="product_image">
+                  <a class="" href="/shop/test-product">
+                    <img
+                      src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-18-300x225.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <!-- Product Quick Actions -->
+                <div class="single_product_future">
+                  <span
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Quick View"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 576 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Add to wishlist"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <!-- Product Information -->
+              <div class="product_info">
+                <a class="" href="/shop/test-product">
+                  <h3 class="product_title">13-inch MacBook Air</h3>
+                </a>
+                <!-- Product Pricing -->
+                <div class="product_pricing">
+                  <span class="sale_price">$999</span>
+                  <span class="regular_price">$999</span>
+                </div>
+                <p class="stock">IN STOCK:</p>
+                <!-- Short Description -->
+                <div class="short_desc">
+                  <p>
+                    ✓ 5 YEARS GUARANTEE ✓ FREE RETURNS ✓ INSTALLMENT OPTIONS
+                  </p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button class="add_to_card">Add To Cart</button>
+              </div>
+            </div>
+            <div class="product_item_wraper">
+              <div class="product_top_bar_info">
+                <!-- Product Status Labels -->
+                <div class="product_status">
+                  <button>New</button><button>27%</button>
+                </div>
+                <!-- Product Image -->
+                <div class="product_image">
+                  <a class="" href="/shop/test-product">
+                    <img
+                      src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-18-300x225.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <!-- Product Quick Actions -->
+                <div class="single_product_future">
+                  <span
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Quick View"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 576 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Add to wishlist"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <!-- Product Information -->
+              <div class="product_info">
+                <a class="" href="/shop/test-product">
+                  <h3 class="product_title">13-inch MacBook Air</h3>
+                </a>
+                <!-- Product Pricing -->
+                <div class="product_pricing">
+                  <span class="sale_price">$999</span>
+                  <span class="regular_price">$999</span>
+                </div>
+                <p class="stock">IN STOCK:</p>
+                <!-- Short Description -->
+                <div class="short_desc">
+                  <p>
+                    ✓ 5 YEARS GUARANTEE ✓ FREE RETURNS ✓ INSTALLMENT OPTIONS
+                  </p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button class="add_to_card">Add To Cart</button>
+              </div>
+            </div>
+            <div class="product_item_wraper">
+              <div class="product_top_bar_info">
+                <!-- Product Status Labels -->
+                <div class="product_status">
+                  <button>New</button><button>27%</button>
+                </div>
+                <!-- Product Image -->
+                <div class="product_image">
+                  <a class="" href="/shop/test-product">
+                    <img
+                      src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-18-300x225.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <!-- Product Quick Actions -->
+                <div class="single_product_future">
+                  <span
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Quick View"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 576 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Add to wishlist"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <!-- Product Information -->
+              <div class="product_info">
+                <a class="" href="/shop/test-product">
+                  <h3 class="product_title">13-inch MacBook Air</h3>
+                </a>
+                <!-- Product Pricing -->
+                <div class="product_pricing">
+                  <span class="sale_price">$999</span>
+                  <span class="regular_price">$999</span>
+                </div>
+                <p class="stock">IN STOCK:</p>
+                <!-- Short Description -->
+                <div class="short_desc">
+                  <p>
+                    ✓ 5 YEARS GUARANTEE ✓ FREE RETURNS ✓ INSTALLMENT OPTIONS
+                  </p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button class="add_to_card">Add To Cart</button>
+              </div>
+            </div>
+            <div class="product_item_wraper">
+              <div class="product_top_bar_info">
+                <!-- Product Status Labels -->
+                <div class="product_status">
+                  <button>New</button><button>27%</button>
+                </div>
+                <!-- Product Image -->
+                <div class="product_image">
+                  <a class="" href="/shop/test-product">
+                    <img
+                      src="https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-18-300x225.png"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <!-- Product Quick Actions -->
+                <div class="single_product_future">
+                  <span
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Quick View"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 576 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Add to wishlist"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                      ></path>
+                    </svg>
+                  </span>
+                </div>
+              </div>
+              <!-- Product Information -->
+              <div class="product_info">
+                <a class="" href="/shop/test-product">
+                  <h3 class="product_title">13-inch MacBook Air</h3>
+                </a>
+                <!-- Product Pricing -->
+                <div class="product_pricing">
+                  <span class="sale_price">$999</span>
+                  <span class="regular_price">$999</span>
+                </div>
+                <p class="stock">IN STOCK:</p>
+                <!-- Short Description -->
+                <div class="short_desc">
+                  <p>
+                    ✓ 5 YEARS GUARANTEE ✓ FREE RETURNS ✓ INSTALLMENT OPTIONS
+                  </p>
+                </div>
+                <!-- Add to Cart Button -->
+                <button class="add_to_card">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--  Call to Action Section start here -->
+
+    <section id="banner" class="section-m1">
+      <div class="container-size">
+        <div class="banner-content">
+          <h4>Repair Services</h4>
+          <h2>Up to <span>70% Off</span> - All t-Shirts & Accessories</h2>
+          <button class="normal">Explore More</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call To Action Banners Section start here -->
+    <section id="sm-banner" class="section-p1">
+      <div class="container-size">
+        <div class="sm-banner-content">
+          <div class="banner-box">
+            <h4>crazy deals</h4>
+            <h2>buy 1 get 1 free</h2>
+            <span>The best classic is on sale at care</span>
+            <button class="white">Learn More</button>
+          </div>
+          <div class="banner-box">
+            <h4>spring/summer</h4>
+            <h2>upcomming season</h2>
+            <span>The best classic is on sale at care</span>
+            <button class="white">Collection</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Text Banners Section start here -->
+    <section id="text-banners">
+      <div class="container-size">
+        <div class="sm-banner-content">
+          <div class="banner-box">
+            <h2>SEASONAL SALE</h2>
+            <h3>Winter Collection -50% OFF</h3>
+          </div>
+          <div class="banner-box">
+            <h2>NEW FOOTWEAR COLLECTION</h2>
+            <h3>Spring / Summer 2022</h3>
+          </div>
+          <div class="banner-box">
+            <h2>T-SHIRTS</h2>
+            <h3>New Trendy Printsk</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter  Section start here -->
+    <section id="newsletter" class="section-p1">
+      <div class="container-size">
+        <div class="newsletter-content">
+          <div class="newsText">
+            <h4>Sign Up For Newsletters</h4>
+            <p>
+              Get E-mail updates about our latest shop and
+              <a href="#">special offers.</a>
+            </p>
+          </div>
+          <div class="newsForm">
+            <input type="text" placeholder="Your Email Address" />
+            <button class="normal" type="submit">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section start here -->
+    <footer>
+      <div class="container-size">
+        <div class="footer-content">
+          <div class="fColom">
+            <img class="footer-logo" src="./assets/images/logo.png" alt="" />
+            <h4>Contact</h4>
+            <p>
+              <strong>Address:</strong> Narayanganj Sadar Upazila 1421, Dhaka
+              Division
+            </p>
+            <p><strong>Phones:</strong> +01 0000 00 00 /(+881) 01903211039</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="socail-follow">
+              <h4>Follow Us</h4>
+              <div class="socail-icon">
+                <a href="#"><i class="fab fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fab fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fab fab fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="fColom">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+          </div>
+
+          <div class="fColom">
+            <h4>My Account</h4>
+            <a href="#">Sign in</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Trock My Order</a>
+            <a href="#">Help</a>
+          </div>
+
+          <div class="fColom footer-install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play.</p>
+            <div class="footer-install-images">
+              <img src="./assets/images/pay/app.jpg" alt="" />
+              <img src="./assets/images/pay/play.jpg" alt="" />
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="./assets/images/pay/pay.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="copyRight">
+        <p>©2023. Mamun Mirdha - HTML CSS Ecommerce Template</p>
+      </div>
+    </footer>
+
+    <!-- Main javascript link -->
+    <script src="src/script.js"></script>
+  </body>
+</html>

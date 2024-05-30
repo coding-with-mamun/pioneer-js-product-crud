@@ -1,0 +1,109 @@
+/*   === Media Query Starts ===   */
+@media (max-width: 1068px) {
+  /* Side Bar */
+  .page-wrapper .side-bar {
+    width: 70px;
+  }
+  .page-wrapper .side-bar.active {
+    width: 240px;
+  }
+  .side-bar .menu-label {
+    display: none;
+  }
+  .side-bar.active .menu-label {
+    display: block;
+  }
+  .side-bar ul.navbar-links.navbar-links-1 {
+    margin-top: 15px;
+  }
+  ul.navbar-links li a .nav-icon i {
+    margin-right: 5px;
+  }
+  .sidebar-footer .settings .gear-icon i,
+  .sidebar-footer .logoutBtn .logout-icon i {
+    margin-right: 5px;
+  }
+  .side-bar .line {
+    width: calc(100% - 20px);
+    left: 10px;
+  }
+  /* Top Bar */
+  .top-bar .top-bar-left .logo {
+    display: none;
+  }
+  .top-bar .top-bar-left .hamburger-btn {
+    display: flex;
+  }
+  .page-wrapper .top-bar {
+    padding: 0px 16px;
+  }
+  .page-wrapper .top-bar .top-bar-left {
+    position: relative;
+    max-width: 70px;
+    width: 70px;
+    left: -21px;
+    justify-content: center;
+  }
+  .top-bar .search-box {
+    left: 0;
+    width: 330px;
+  }
+  /* Contents */
+  .page-wrapper .contents {
+    padding-left: 70px;
+  }
+}
+@media (max-width: 868px) {
+  .contents .description {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 668px) {
+  .description .col-1 .boxes-row {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 568px) {
+  /* Remove Search Bar */
+  .top-bar .search-box {
+    display: none;
+  }
+  /* Hide Side Bar */
+  .page-wrapper .side-bar {
+    width: 0px;
+  }
+  /* Remove Contents Padding */
+  .page-wrapper .contents {
+    padding-left: 0px;
+  }
+  /* Chart */
+  .chart-value-wrapper .chart-value {
+    width: 18px;
+  }
+  .chart-value-wrapper .chart-value::before {
+    display: none;
+  }
+  .chart-contents .chart-labels div {
+    font-size: 13px;
+    font-weight: 400;
+  }
+}
+@media (max-width: 468px) {
+  /* Chart Header */
+  .col-1 .chart .chart-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .chart .chart-header h2 {
+    font-size: calc(18px + 0.3vw);
+  }
+  /* Chart Pole Width */
+  .chart-value-wrapper .chart-value {
+    width: 13px;
+  }
+  /* Panel Links */
+  .contents .panel-bar .row-2 a {
+    margin-right: 12px;
+    font-size: 14px;
+  }
+}
