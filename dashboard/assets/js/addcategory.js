@@ -16,5 +16,5 @@ categoryNameInput.addEventListener("input", (event) => {
 // Add event listener to the submit button
 categoryFormElement.addEventListener("submit", (event) => {
   event.preventDefault();
-  createData(event, "categoryData", categoryFormElement);
+  createData("categoryData", categoryFormElement, "categoryImage");
 });

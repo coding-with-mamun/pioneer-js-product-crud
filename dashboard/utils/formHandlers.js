@@ -1,13 +1,11 @@
-// formHandlers.js
-
 // Function to create data and save it to localStorage
-const createData = (event, key, formElement) => {
+const createData = (key, formElement, imageKey) => {
   const data = extractFormData(formElement);
 
   // Retrieve the image URL from localStorage
   const imageUrl = localStorage.getItem("previewImageUrl");
   if (imageUrl) {
-    data.categoryImage = imageUrl;
+    data[imageKey] = imageUrl; // Use the dynamic key for the image URL
   }
 
   let storageData = JSON.parse(localStorage.getItem(key)) || [];

@@ -11,7 +11,7 @@ const showMessage = (message) => {
   const msgContainer = document.querySelector(".msg");
   const msgContent = msgContainer.querySelector("p");
   msgContent.textContent = message;
-  msgContainer.style.display = "block";
+  msgContainer.style.display = "flex";
 };
 
 // Function to hide the message
