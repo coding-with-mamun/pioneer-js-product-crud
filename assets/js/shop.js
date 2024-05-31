@@ -1,10 +1,9 @@
-function updateValueDisplay(range) {
+const updateValueDisplay = (range) => {
   const valueDisplay = document.getElementById("rangeValue");
-  const maxRange = parseInt(range.max, 10); // Get the maximum value of the range input
-  const percentage = (range.value / maxRange) * 100; // Calculate the percentage position
+  const maxRange = parseInt(range.max, 10);
+  const percentage = (range.value / maxRange) * 100;
   valueDisplay.textContent = range.value;
 
-  // Ensure the value display stays within the bounds of the range input
   const parentWidth = range.offsetWidth;
   const valueWidth = valueDisplay.offsetWidth;
   const leftPosition = Math.min(
@@ -13,9 +12,8 @@ function updateValueDisplay(range) {
   );
 
   valueDisplay.style.left = `${leftPosition}px`;
-}
+};
 
-// Initialize the value display on page load
 window.addEventListener("DOMContentLoaded", (event) => {
   const rangeInput = document.getElementById("Range1");
   const resetButton = document.querySelector("button[type='reset']");
@@ -25,9 +23,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
   rangeInput.addEventListener("input", () => updateValueDisplay(rangeInput));
 
   resetButton.addEventListener("click", () => {
-    // Wait for the reset event to update the input value
     setTimeout(() => {
       updateValueDisplay(rangeInput);
     }, 0);
   });
 });
+
+// get products

@@ -40,6 +40,13 @@ img {
   max-width: 100%;
   height: auto;
 }
+a {
+  text-decoration: none;
+}
+.visitPage a {
+  color: var(--heading-clr);
+  margin-left: 20px;
+}
 .page-wrapper {
   position: relative;
   width: 100%;
@@ -346,9 +353,15 @@ ul.navbar-links li.active a .nav-text {
 }
 
 /*   === Code For Side Bar Ends ===   */
+/*   ===  Code For All Input Fields  ===   */
 .preview-image img {
   width: 175px;
   border-radius: 10px;
+}
+.productImagePreview img {
+  width: 100%;
+  height: auto;
+  margin: auto;
 }
 .msg {
   background-color: var(--primary-clr);
@@ -389,6 +402,7 @@ ul.navbar-links li.active a .nav-text {
   display: block;
 }
 .form-group input[type="text"],
+.form-group input[type="number"],
 .form-group input[type="password"] {
   border: 1px solid rgba(145, 158, 171, 0.32);
   height: 40px;
@@ -408,9 +422,12 @@ ul.navbar-links li.active a .nav-text {
   font-weight: 400;
   padding: 10px 15px;
   border-radius: 5px;
-
   background-color: var(--bg-secondary);
   color: var(--heading-clr);
+}
+
+.form-group textarea.productDescription {
+  height: 300px;
 }
 textarea.form-control {
   min-height: calc(1.5em + 0.75rem + 2px);
@@ -482,6 +499,23 @@ textarea.form-control {
   color: var(--heading-clr);
   box-shadow: none;
 }
+
+header.products-header h4 {
+  margin: 0;
+  color: var(--heading-clr);
+}
+.showAllBrandItems,
+.showAllItems {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.showAllBrandItems .form-check,
+.showAllItems .form-check {
+  font-size: 19px;
+  color: var(--heading-clr);
+}
+/*   ===  Code For All Input Fields end ===   */
 /*   === Code For Contents Starts ===   */
 .page-wrapper .contents {
   position: relative;

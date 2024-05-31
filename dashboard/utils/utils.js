@@ -1,4 +1,5 @@
-// utils.js
+// get elements
+const closeMsg = document.querySelector(".close-msg");
 
 // Function to generate a unique ID
 const generateUniqueId = () => "_" + Math.random().toString(36).substr(2, 9);
@@ -21,7 +22,9 @@ const hideMessage = () => {
 };
 
 // Attach event listener to the close button
-document.querySelector(".close-msg").addEventListener("click", hideMessage);
+if (closeMsg) {
+  closeMsg.addEventListener("click", hideMessage);
+}
 
 // Function to extract form data
 const extractFormData = (formElement) => {

@@ -6,7 +6,7 @@ const brandSlugInput = document.getElementById("brandSlug");
 // Initialize the image preview functionality
 setupImagePreview("brandImage", "previewImage", "previewImageUrl");
 
-// Add event listener to the category name input to generate slug dynamically
+// generate slug dynamically
 brandNameInput.addEventListener("input", (event) => {
   const brandName = event.target.value;
   const brandSlug = generateSlug(brandName);
