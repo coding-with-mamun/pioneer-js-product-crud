@@ -9,21 +9,25 @@ const showCustomerDashboard = () => {
 
   let customerItemHtml = "";
 
-  filteredCustomer.reverse().forEach((item, index) => {
-    customerItemHtml += `
-    <tr class="align-middle">
-    <td>${index + 1}</td>
-    <td>${item.name}</td>
-    <td> ${item.email}</td>
-    <td> ${item.phone}</td>
-    <td> ${item.address}</td>
-    <td> ${item.product}</td>
-    <td> ${item.quantity}</td>
-    <td> ${item.productId}</td>
-  </tr>
-    
-    `;
-  });
+  if (filteredCustomer.length === 0) {
+    customerItemHtml = "<p>No Customer Found</p>";
+  } else {
+    filteredCustomer.reverse().forEach((item, index) => {
+      customerItemHtml += `
+        <tr class="align-middle">
+        <td>${index + 1}</td>
+        <td>${item.name}</td>
+        <td> ${item.email}</td>
+        <td> ${item.phone}</td>
+        <td> ${item.address}</td>
+        <td> ${item.product}</td>
+        <td> ${item.quantity}</td>
+        <td> ${item.productId}</td>
+      </tr>
+        
+        `;
+    });
+  }
 
   listCustomerDashboard.innerHTML = customerItemHtml;
 };
