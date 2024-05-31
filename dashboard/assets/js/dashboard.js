@@ -10,7 +10,8 @@ const showCustomerDashboard = () => {
   let customerItemHtml = "";
 
   if (filteredCustomer.length === 0) {
-    customerItemHtml = "<p>No Customer Found</p>";
+    customerItemHtml =
+      "<tr class='align-middle py-3'><td colspan = '8'>No Customer Found</td></tr>";
   } else {
     filteredCustomer.reverse().forEach((item, index) => {
       customerItemHtml += `
