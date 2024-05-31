@@ -101,6 +101,9 @@ body {
 /*------------------ Home page -----------------------*/
 
 /* Header Design Start */
+img.logo {
+  width: 137px;
+}
 #header {
   padding: 20px 0;
   background-color: #e3e6f3;
