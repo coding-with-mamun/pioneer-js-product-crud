@@ -1,5 +1,6 @@
 // get elements
 const productSectionWraper = document.querySelector(".product_section_wraper");
+
 const showProductList = document.getElementById("showProductList");
 const productHiddenId = document.getElementById("productHiddenId");
 const buyNewProductSubmit = document.getElementById("buyNewProduct");
@@ -8,11 +9,12 @@ const showSingleProductDetails = document.querySelector(
   ".showSingleProductDetails"
 );
 
+// Function to update the value display and position
 const updateValueDisplay = (range) => {
   const valueDisplay = document.getElementById("rangeValue");
   const maxRange = parseInt(range.max, 10);
   const percentage = (range.value / maxRange) * 100;
-  valueDisplay.textContent = range.value;
+  valueDisplay.innerText = range.value;
 
   const parentWidth = range.offsetWidth;
   const valueWidth = valueDisplay.offsetWidth;
@@ -24,17 +26,154 @@ const updateValueDisplay = (range) => {
   valueDisplay.style.left = `${leftPosition}px`;
 };
 
+// Function to show all products or filtered products
+const showProducts = (filterQuantity) => {
+  const getProduct = JSON.parse(localStorage.getItem("allproducts")) || [];
+
+  const filteredProducts = getProduct.filter(
+    (product) => !product.trash && product.quantity <= filterQuantity
+  );
+
+  const sortedProducts = filteredProducts.sort(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  );
+
+  let getProductInfo = "";
+
+  if (sortedProducts.length === 0) {
+    getProductInfo = "<p>No Product Found</p>";
+  } else {
+    sortedProducts.forEach((product) => {
+      getProductInfo += `
+                    <div class="product_item_wraper">
+                      <div class="product_top_bar_info">
+                        <div class="product_status">
+                        ${
+                          product.quantity > 0
+                            ? "<button>Stock</button>"
+                            : "<button class='outOfStockBtn'>Out Of Stock</button>"
+                        }
+                          ${product.futured ? "<button>Featured</button>" : ""}
+                        </div>
+                        <div class="product_image">
+                          <a class="" href="/shop/${product.productSlug}">
+                            <img
+                              src="${
+                                product.productImage ||
+                                "https://ninetheme.com/themes/electron/wp-content/uploads/2023/08/1-18-300x225.png"
+                              }"
+                              alt="${product.productName}"
+                            />
+                          </a>
+                        </div>
+                        <div class="single_product_future">
+                          <span
+                            data-bs-toggle="modal"
+                            data-bs-target="#showSingleProduct"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Quick View"
+                            onclick="showProductDetails('${product.id}')"
+                          >
+                            <svg
+                              stroke="currentColor"
+                              fill="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 576 512"
+                              height="1em"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"
+                              ></path>
+                            </svg>
+                          </span>
+                          <span
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Add to wishlist"
+                          >
+                            <svg
+                              stroke="currentColor"
+                              fill="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 512 512"
+                              height="1em"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                              ></path>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="product_info">
+                        <a class="" href="/shop/${product.productSlug}">
+                          <h3 class="product_title">${product.productName}</h3>
+                        </a>
+                        <div class="product_pricing">
+                          <span class="sale_price">৳${
+                            product.sellPrice || product.regularPrice
+                          }</span>
+                          ${
+                            product.sellPrice
+                              ? `<span class="regular_price">৳${product.regularPrice}</span>`
+                              : ""
+                          }
+                        </div>
+                        ${
+                          product.quantity > 0
+                            ? `<p class='stock'>IN STOCK: ${product.quantity}</p>`
+                            : `<p class='outOfStock'>OUT OF STOCK: ${product.quantity}</p>`
+                        }
+                        <div class="short_desc">
+                          <p>${product.shortDescription}</p>
+                        </div>
+                        ${
+                          product.quantity > 0
+                            ? `<button class="add_to_card" data-bs-toggle="modal" data-bs-target="#bookProductCustomer" onclick="buyProduct('${product.id}')">Book Now</button>`
+                            : `<button class="add_to_card_out_of_stock">OUT OF STOCK</button>`
+                        }
+                      </div>
+                    </div>
+                  `;
+    });
+  }
+
+  productSectionWraper.innerHTML = getProductInfo;
+};
+
+// Event listener for DOM content loaded
 window.addEventListener("DOMContentLoaded", (event) => {
   const rangeInput = document.getElementById("Range1");
+  const maxValueSpan = document.getElementById("maxValue");
   const resetButton = document.querySelector("button[type='reset']");
 
-  updateValueDisplay(rangeInput);
+  const allproducts = JSON.parse(localStorage.getItem("allproducts")) || [];
+  const maxQuantity = allproducts.reduce((max, product) => {
+    const quantity = parseInt(product.quantity);
+    return isNaN(quantity) ? max : Math.max(max, quantity);
+  }, 0);
 
-  rangeInput.addEventListener("input", () => updateValueDisplay(rangeInput));
+  rangeInput.max = maxQuantity;
+  maxValueSpan.innerText = maxQuantity;
+
+  updateValueDisplay(rangeInput);
+  showProducts(maxQuantity);
+
+  rangeInput.addEventListener("input", () => {
+    updateValueDisplay(rangeInput);
+    showProducts(rangeInput.value);
+  });
 
   resetButton.addEventListener("click", () => {
     setTimeout(() => {
+      rangeInput.value = 0;
       updateValueDisplay(rangeInput);
+      showProducts(maxQuantity);
     }, 0);
   });
 });
