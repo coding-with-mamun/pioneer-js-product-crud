@@ -212,7 +212,39 @@
               <div class="chart-header">
                 <h2>New Customer</h2>
               </div>
-              <div class="chart-contents"></div>
+
+              <div class="chart-contents">
+                <div
+                  class="card"
+                  style="
+                    background-color: var(--bg-ternary);
+                    color: var(--heading-clr);
+                    font-size: 14px;
+                  "
+                >
+                  <div class="card-body">
+                    <table
+                      class="table datanew dataTable bsTableCustomize"
+                      role="grid"
+                      id="studentListTable"
+                    >
+                      <thead>
+                        <tr role="row">
+                          <th style="width: 5%">#</th>
+                          <th style="width: 10%">Name</th>
+                          <th style="width: 10%">Email</th>
+                          <th style="width: 10%">Phone</th>
+                          <th style="width: 20%">Address</th>
+                          <th style="width: 20%">Product Name</th>
+                          <th style="width: 10%">Quantity</th>
+                          <th style="width: 15%">Product Id</th>
+                        </tr>
+                      </thead>
+                      <tbody class="listCustomerDashboard"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
             <!--   === Analytics Chart Ends ===   -->
           </div>
@@ -361,5 +393,10 @@
     <!--   *** Link To Custom Script File ***   -->
     <script type="text/javascript" src="./assets/js/globalScript.js"></script>
     <script type="text/javascript" src="./assets/js/script.js"></script>
+
+    <script src="./assets/js/function.js"></script>
+    <script src="./utils/utils.js"></script>
+    <script src="./utils/formHandlers.js"></script>
+    <script src="./assets/js/dashboard.js"></script>
   </body>
 </html>
