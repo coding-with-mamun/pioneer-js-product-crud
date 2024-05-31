@@ -575,6 +575,25 @@ header.products-header h4 {
   color: var(--primary-clr);
 }
 /*   === Code For Panel Ends ===   */
+/*   === Code For Panel Ends ===   */
+
+.bsTableCustomize tr th {
+  background: var(--bg-secondary);
+  color: var(--heading-clr);
+  padding: 10px;
+}
+.bsTableCustomize tbody tr td {
+  background-color: var(--bg-ternary);
+  padding: 10px;
+  color: var(--heading-clr);
+}
+td.productDashImage img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/*   === Code For Panel Ends ===   */
 /*   === Code For Description Starts ===   */
 .contents .description {
   width: 100%;

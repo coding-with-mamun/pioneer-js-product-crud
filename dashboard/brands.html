@@ -180,8 +180,31 @@
                 <h2>Total Brands</h2>
               </div>
               <div class="chart-contents">
-                <div class="card">
-                  <div class="card-body"></div>
+                <div
+                  class="card"
+                  style="
+                    background-color: var(--bg-ternary);
+                    color: var(--heading-clr);
+                  "
+                >
+                  <div class="card-body">
+                    <table
+                      class="table datanew dataTable bsTableCustomize"
+                      role="grid"
+                      id="studentListTable"
+                    >
+                      <thead>
+                        <tr role="row">
+                          <th style="width: 10%">#</th>
+                          <th style="width: 15%">Name</th>
+                          <th style="width: 10%">Image</th>
+                          <th style="width: 55%">Description</th>
+                          <th style="width: 10%">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody class="listBrand"></tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
@@ -203,6 +226,6 @@
     <script src="./assets/js/function.js"></script>
     <script src="./utils/utils.js"></script>
     <script src="./utils/formHandlers.js"></script>
-    <script src="./assets/js/addcategory.js"></script>
+    <script src="./assets/js/brands.js"></script>
   </body>
 </html>
