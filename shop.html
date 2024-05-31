@@ -230,12 +230,7 @@
     </section>
 
     <!--? Show modal for single user data show  -->
-    <div
-      class="modal fade"
-      id="showSingleProduct"
-      tabindex="-1"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="showSingleProduct" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body">
@@ -246,94 +241,84 @@
     </div>
 
     <!--? show modal for book Product -->
-    <!-- <button
-      type="button"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#exampleModal"
-      data-bs-whatever="@getbootstrap"
-    >
-      Open modal for @getbootstrap
-    </button>
-
     <div
       class="modal fade"
-      id="exampleModal"
+      id="bookProductCustomer"
       tabindex="-1"
-      aria-labelledby="exampleModalLabel"
+      aria-labelledby="bookProductCustomer"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <form>
+          <form id="buyNewProduct">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="bookProductCustomer">
+                Buy Product
+              </h1>
+              <button
+                type="reset"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
             <div class="modal-body">
               <div class="mb-3">
-                <label for="recipient-name" class="col-form-label"
-                  >Recipient:</label
-                >
-                <input type="text" class="form-control" id="recipient-name" />
+                <label for="name" class="col-form-label">Name:</label>
+                <input type="text" name="name" class="form-control" id="name" />
               </div>
               <div class="mb-3">
-                <label for="message-text" class="col-form-label"
-                  >Message:</label
-                >
-                <textarea class="form-control" id="message-text"></textarea>
+                <label for="email" class="col-form-label">Email:</label>
+                <input
+                  type="text"
+                  name="email"
+                  class="form-control"
+                  id="email"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="col-form-label">Phone:</label>
+                <input
+                  type="text"
+                  name="phone"
+                  class="form-control"
+                  id="phone"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="product" class="col-form-label">Product:</label>
+                <select
+                  name="product"
+                  class="form-select"
+                  id="showProductList"
+                ></select>
+              </div>
+              <input type="hidden" name="productId" id="productHiddenId" />
+              <div class="mb-3">
+                <label for="quantity" class="col-form-label">Quantity:</label>
+                <input
+                  type="number"
+                  name="quantity"
+                  class="form-control"
+                  id="quantity"
+                  value="1"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="address" class="col-form-label">Address:</label>
+                <textarea
+                  name="address"
+                  class="form-control"
+                  id="address"
+                ></textarea>
               </div>
             </div>
             <div class="modal-footer">
-              <button
-                type="reset"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-primary">
-                Send message
-              </button>
+              <button type="submit" class="btn btn-primary">Buy Product</button>
             </div>
           </form>
         </div>
       </div>
-    </div> -->
-
-    <div
-      class="wc-block-components-text-input wc-block-components-address-form__phone"
-    >
-      <input
-        type="tel"
-        id="shipping-phone"
-        autocapitalize="characters"
-        autocomplete="tel"
-        aria-label="Phone (optional)"
-        aria-invalid="false"
-        title=""
-        value=""
-      /><label for="shipping-phone">Phone (optional)</label>
-    </div>
-
-    <div
-      class="wc-block-components-text-input wc-block-components-address-form__phone"
-    >
-      <input
-        type="tel"
-        id="billing-phone"
-        autocapitalize="characters"
-        autocomplete="tel"
-        aria-label="Phone (optional)"
-        aria-invalid="false"
-        title=""
-        value=""
-      /><label for="billing-phone">Phone (optional)</label>
     </div>
 
     <!-- Footer Section start here -->

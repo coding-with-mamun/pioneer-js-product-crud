@@ -1,5 +1,8 @@
 // get elements
 const productSectionWraper = document.querySelector(".product_section_wraper");
+const showProductList = document.getElementById("showProductList");
+const productHiddenId = document.getElementById("productHiddenId");
+const buyNewProductSubmit = document.getElementById("buyNewProduct");
 const productCategoryList = document.querySelector(".product_category_list");
 const showSingleProductDetails = document.querySelector(
   ".showSingleProductDetails"
@@ -155,7 +158,7 @@ const showAllProductList = () => {
             <!-- Add to Cart Button -->
             ${
               product.quantity > 0
-                ? `<button class="add_to_card">Book Now</button>`
+                ? `<button class="add_to_card" data-bs-toggle="modal" data-bs-target="#bookProductCustomer" onclick = "buyProduct('${product.id}')">Book Now</button>`
                 : `<button class="add_to_card_out_of_stock">OUT OF STOCK</button>`
             }
           </div>
@@ -264,7 +267,7 @@ const showProductDetails = (id) => {
         ${
           findSingleProduct.quantity > 0
             ? `
-          <button>
+          <button  data-bs-toggle="modal" data-bs-target="#bookProductCustomer" onclick = "buyProduct('${findSingleProduct.id}')">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -325,6 +328,44 @@ const showProductDetails = (id) => {
   
   
   `;
+};
+
+// buy product
+const buyProduct = (id) => {
+  productHiddenId.value = id;
+  // Get all items from localStorage
+  const getProduct = getItems("allproducts");
+
+  // Filter out items with trash: true
+  const filteredProducts = getProduct.filter((product) => !product.trash);
+  const singleItem = getProduct.find((singleItem) => singleItem.id == id);
+
+  // Sort items by createdAt in descending order
+  const sortedProducts = filteredProducts.sort(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  );
+
+  let selectInputName = "";
+
+  sortedProducts.map((item) => {
+    selectInputName += `<option ${
+      singleItem.productName === item.productName || singleItem.id === item.id
+        ? "selected"
+        : ""
+    } value="${item.productName}">${item.productName}</option>`;
+  });
+
+  showProductList.innerHTML = selectInputName;
+};
+
+// buy product
+buyNewProductSubmit.onsubmit = (e) => {
+  e.preventDefault();
+  const form_data = new FormData(e.target);
+  const data = Object.fromEntries(form_data.entries());
+  createItem("customer", data, e);
+
+  showAllProductList();
 };
 
 // Call the function to display the products
