@@ -45,7 +45,7 @@ const showAllProductList = () => {
                 : `<button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#quantityUpdateModal" onclick = "updateProductQuantity('${product.id}')">Add Quantity</button>`
             }
           </td>
-          <td>${timeAgo(product?.createdAt)}</td>
+          <td>${timeAgo(product.createdAt)}</td>
           <td>
             <button class="btn btn-info">
               <i class="fa-regular fa-pen-to-square"></i>
